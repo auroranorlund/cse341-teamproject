@@ -5,9 +5,7 @@
     "description": "API for managing products, customers, orders, and employees for a theoretical online storefront.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
   "basePath": "/",
-  "schemes": ["http", "https"],
   "paths": {
     "/products": {
       "get": {
