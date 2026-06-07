@@ -26,7 +26,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "productName": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "$0.00"
+                },
+                "productDescription": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
@@ -70,7 +81,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "productName": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "$0.00"
+                },
+                "productDescription": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
@@ -126,7 +148,42 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any@domain.com"
+                },
+                "billingAddress": {
+                  "example": "1234 Any St"
+                },
+                "billingCity": {
+                  "example": "any"
+                },
+                "billingState": {
+                  "example": "NY"
+                },
+                "billingZip": {
+                  "example": "12345"
+                },
+                "shippingAddress": {
+                  "example": "1234 Any St"
+                },
+                "shippingCity": {
+                  "example": "any"
+                },
+                "shippingState": {
+                  "example": "NY"
+                },
+                "shippingZip": {
+                  "example": "12345"
+                }
+              }
             }
           }
         ],
@@ -170,7 +227,42 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any@domain.com"
+                },
+                "billingAddress": {
+                  "example": "1234 Any St"
+                },
+                "billingCity": {
+                  "example": "any"
+                },
+                "billingState": {
+                  "example": "NY"
+                },
+                "billingZip": {
+                  "example": "12345"
+                },
+                "shippingAddress": {
+                  "example": "1234 Any St"
+                },
+                "shippingCity": {
+                  "example": "any"
+                },
+                "shippingState": {
+                  "example": "NY"
+                },
+                "shippingZip": {
+                  "example": "12345"
+                }
+              }
             }
           }
         ],
@@ -226,7 +318,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "customerId": {
+                  "example": "insert customer id here"
+                },
+                "products": {
+                  "example": ["insert product id here", "another id"]
+                },
+                "orderDate": {
+                  "example": "2026-06-07"
+                }
+              }
             }
           }
         ],
@@ -270,7 +373,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "customerId": {
+                  "example": "insert customer id here"
+                },
+                "products": {
+                  "example": ["insert product id here", "another id"]
+                },
+                "orderDate": {
+                  "example": "2026-06-07"
+                }
+              }
             }
           }
         ],
@@ -326,7 +440,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any@domain.com"
+                },
+                "storeNumber": {
+                  "example": "1"
+                },
+                "role": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
@@ -370,7 +501,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any@domain.com"
+                },
+                "storeNumber": {
+                  "example": "1"
+                },
+                "role": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],

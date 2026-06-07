@@ -1,7 +1,7 @@
 const mongodb = require('../data/database');
 
 const getCollection = (collectionName) => {
-  return mongodb.getDatabase().db().collection(collectionName);
+  return mongodb.getDatabase().db('teamproject').collection(collectionName);
 };
 
 const createCrudController = (collectionName) => {
