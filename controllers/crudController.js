@@ -1,11 +1,8 @@
-const { ObjectId } = require('mongodb');
 const mongodb = require('../data/database');
 
 const getCollection = (collectionName) => {
   return mongodb.getDatabase().db().collection(collectionName);
 };
-
-const isValidObjectId = (id) => ObjectId.isValid(id);
 
 const createCrudController = (collectionName) => {
   const getAll = async (req, res) => {
@@ -18,15 +15,9 @@ const createCrudController = (collectionName) => {
   };
 
   const getSingle = async (req, res) => {
-    const { id } = req.params;
-
-    if (!isValidObjectId(id)) {
-      return res.status(400).json({ message: 'Invalid id format.' });
-    }
-
     try {
       const item = await getCollection(collectionName).findOne({
-        _id: new ObjectId(id),
+        _id: req.objectId,
       });
 
       if (!item) {
@@ -52,16 +43,11 @@ const createCrudController = (collectionName) => {
   };
 
   const update = async (req, res) => {
-    const { id } = req.params;
     const { _id, ...updatedRecord } = req.body;
-
-    if (!isValidObjectId(id)) {
-      return res.status(400).json({ message: 'Invalid id format.' });
-    }
 
     try {
       const result = await getCollection(collectionName).updateOne(
-        { _id: new ObjectId(id) },
+        { _id: req.objectId },
         { $set: updatedRecord }
       );
 
@@ -76,15 +62,9 @@ const createCrudController = (collectionName) => {
   };
 
   const remove = async (req, res) => {
-    const { id } = req.params;
-
-    if (!isValidObjectId(id)) {
-      return res.status(400).json({ message: 'Invalid id format.' });
-    }
-
     try {
       const result = await getCollection(collectionName).deleteOne({
-        _id: new ObjectId(id),
+        _id: req.objectId,
       });
 
       if (result.deletedCount === 0) {

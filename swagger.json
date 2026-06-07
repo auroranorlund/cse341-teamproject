@@ -1,0 +1,422 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Online Storefront API",
+    "description": "API for managing products, customers, orders, and employees for a theoretical online storefront.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": ["http", "https"],
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get all products",
+        "responses": {
+          "200": {
+            "description": "A list of products"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Products"],
+        "summary": "Create a product",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Product created"
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get one product",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product found"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Products"],
+        "summary": "Update a product",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product updated"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Products"],
+        "summary": "Delete a product",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product deleted"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      }
+    },
+    "/customers": {
+      "get": {
+        "tags": ["Customers"],
+        "summary": "Get all customers",
+        "responses": {
+          "200": {
+            "description": "A list of customers"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Customers"],
+        "summary": "Create a customer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Customer created"
+          }
+        }
+      }
+    },
+    "/customers/{id}": {
+      "get": {
+        "tags": ["Customers"],
+        "summary": "Get one customer",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer found"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Customers"],
+        "summary": "Update a customer",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Customer updated"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Customers"],
+        "summary": "Delete a customer",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Customer deleted"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "tags": ["Orders"],
+        "summary": "Get all orders",
+        "responses": {
+          "200": {
+            "description": "A list of orders"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Orders"],
+        "summary": "Create an order",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Order created"
+          }
+        }
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "tags": ["Orders"],
+        "summary": "Get one order",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order found"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Orders"],
+        "summary": "Update an order",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Order updated"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Orders"],
+        "summary": "Delete an order",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Order deleted"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        }
+      }
+    },
+    "/employees": {
+      "get": {
+        "tags": ["Employees"],
+        "summary": "Get all employees",
+        "responses": {
+          "200": {
+            "description": "A list of employees"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Employees"],
+        "summary": "Create an employee",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Employee created"
+          }
+        }
+      }
+    },
+    "/employees/{id}": {
+      "get": {
+        "tags": ["Employees"],
+        "summary": "Get one employee",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee found"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Employees"],
+        "summary": "Update an employee",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Employee updated"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Employees"],
+        "summary": "Delete an employee",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ObjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Employee deleted"
+          },
+          "400": {
+            "description": "Invalid id format"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "ObjectId": {
+      "name": "id",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "MongoDB ObjectId"
+    }
+  }
+}
