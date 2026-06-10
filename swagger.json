@@ -20,6 +20,7 @@
       "post": {
         "tags": ["Products"],
         "summary": "Create a product",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "name": "body",
@@ -72,6 +73,7 @@
       "put": {
         "tags": ["Products"],
         "summary": "Update a product",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -111,6 +113,7 @@
       "delete": {
         "tags": ["Products"],
         "summary": "Delete a product",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -142,6 +145,7 @@
       "post": {
         "tags": ["Customers"],
         "summary": "Create a customer",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "name": "body",
@@ -218,6 +222,7 @@
       "put": {
         "tags": ["Customers"],
         "summary": "Update a customer",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -281,6 +286,7 @@
       "delete": {
         "tags": ["Customers"],
         "summary": "Delete a customer",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -312,6 +318,7 @@
       "post": {
         "tags": ["Orders"],
         "summary": "Create an order",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "name": "body",
@@ -364,6 +371,7 @@
       "put": {
         "tags": ["Orders"],
         "summary": "Update an order",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -403,6 +411,7 @@
       "delete": {
         "tags": ["Orders"],
         "summary": "Delete an order",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -434,6 +443,7 @@
       "post": {
         "tags": ["Employees"],
         "summary": "Create an employee",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "name": "body",
@@ -492,6 +502,7 @@
       "put": {
         "tags": ["Employees"],
         "summary": "Update an employee",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -537,6 +548,7 @@
       "delete": {
         "tags": ["Employees"],
         "summary": "Delete an employee",
+        "security": [{ "GitHub": ["user"] }],
         "parameters": [
           {
             "$ref": "#/parameters/ObjectId"
@@ -554,6 +566,17 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "GitHub": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://github.com/login/oauth/authorize",
+      "scopes": {
+        "user": "User profile access"
+      },
+      "description": "Sign in with GitHub to access protected endpoints"
     }
   },
   "parameters": {
