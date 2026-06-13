@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = new express.Router();
 
+
 router.use('/api-docs', require('./swaggerRoutes'));
 router.use('/products', require('./products'));
 router.use('/customers', require('./customers'));
