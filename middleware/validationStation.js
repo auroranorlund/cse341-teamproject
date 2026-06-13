@@ -30,9 +30,9 @@ const employeeRules = [
 ];
 
 const productRules = [
-    body('name').isString().notEmpty().withMessage('Product name is required and must be a string.'),
+    body('productName').trim().isString().notEmpty().withMessage('Product name is required and must be a string.'),
     body('price').isFloat({ min: 0 }).withMessage('Price is required and must be a number greater than 0.'),
-    body('description').isString().notEmpty().withMessage('Description is required and must be a string.'),
+    body('productDescription').trim().isString().notEmpty().withMessage('Description is required and must be a string.'),
 ];
 
 const orderRules = [
