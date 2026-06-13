@@ -18,15 +18,25 @@ const validateData = (rules) => {
 };
 
 const customerRules = [
-    body('firstName').isString().notEmpty().withMessage('First name is required and must be a string.'),
+    body('firstName').trim().isString().notEmpty().withMessage('First name is required and must be a string.'),
+    body('lastName').trim().isString().notEmpty().withMessage('Last name is required and must be a string.'),
     body('email').isEmail().withMessage('Valid email is required.'),
-    body('phone').isMobilePhone().withMessage('Valid phone number is required.'),
+    body('billingAddress').trim().isString().notEmpty().withMessage('Billing address is required and must be a string.'),
+    body('billingCity').trim().isString().notEmpty().withMessage('Billing city is required and must be a string.'),
+    body('billingState').trim().isString().notEmpty().withMessage('Billing state is required and must be a string.'),
+    body('billingZip').isNumeric().withMessage('Billing zip must be a number.'),
+    body('shippingAddress').trim().isString().notEmpty().withMessage('Shipping address is required and must be a string.'),
+    body('shippingCity').trim().isString().notEmpty().withMessage('Shipping city is required and must be a string.'),
+    body('shippingState').trim().isString().notEmpty().withMessage('Shipping state is required and must be a string.'),
+    body('shippingZip').isNumeric().withMessage('Shipping zip must be a number.'),
 ];
 
 const employeeRules = [
-    body('firstName').isString().notEmpty().withMessage('First name is required and must be a string.'),
+    body('firstName').trim().isString().notEmpty().withMessage('First name is required and must be a string.'),
+    body('lastName').trim().isString().notEmpty().withMessage('Last name is required and must be a string.'),
     body('email').isEmail().withMessage('Valid email is required.'),
-    body('position').isString().notEmpty().withMessage('Position is required and must be a string.'),
+    body('storeNumber').isNumeric().withMessage('Store number is required and must be a number.'),
+    body('role').trim().isString().notEmpty().withMessage('Role is required and must be a string.'),
 ];
 
 const productRules = [
@@ -37,8 +47,9 @@ const productRules = [
 
 const orderRules = [
     body('customerId').isMongoId().withMessage('Valid customer ID is required.'),
-    body('productId').isMongoId().withMessage('Valid product ID is required.'),
-    body('quantity').isInt({ min: 1 }).withMessage('Quantity is required and must be a positive integer.'),
+    body('products').isArray({ min: 1 }).withMessage('Products must be an array with at least one item.'),
+    body('products.*').isMongoId().withMessage('Each product ID must be valid.'),
+    body('orderDate').isISO8601().withMessage('Order date must be a valid date (YYYY-MM-DD format).'),
 ];
 
 module.exports = {
