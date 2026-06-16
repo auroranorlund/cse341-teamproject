@@ -47,8 +47,8 @@ const productRules = [
 
 const orderRules = [
     body('customerId').isMongoId().withMessage('Valid customer ID is required.'),
-    body('products').isArray({ min: 1 }).withMessage('Products must be an array with at least one item.'),
-    body('products.*').isMongoId().withMessage('Each product ID must be valid.'),
+    body('productIds').isArray({ min: 1 }).withMessage('Products must be an array with at least one item.'),
+    body('productIds.*').isMongoId().withMessage('Each product ID must be valid.'),
     body('orderDate').isISO8601().withMessage('Order date must be a valid date (YYYY-MM-DD format).'),
 ];
 
