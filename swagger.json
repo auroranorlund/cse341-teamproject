@@ -33,7 +33,7 @@
                   "example": "any"
                 },
                 "price": {
-                  "example": "$0.00"
+                  "example": "0.00"
                 },
                 "productDescription": {
                   "example": "any"
@@ -89,7 +89,7 @@
                   "example": "any"
                 },
                 "price": {
-                  "example": "$0.00"
+                  "example": "0.00"
                 },
                 "productDescription": {
                   "example": "any"
